@@ -171,4 +171,6 @@ if __name__ == "__main__":
     # Thread do agendador
     threading.Thread(target=loop_agendamento, daemon=True).start()
 
-    app.run(host="0.0.0.0", port=PORT, debug=False)
+import os
+port = int(os.environ.get("PORT", 3001))
+app.run(host="0.0.0.0", port=port, debug=False)
